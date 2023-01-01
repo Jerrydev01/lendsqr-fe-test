@@ -1,0 +1,103 @@
+@import "../../shared-styles.scss";
+
+#loginSec {
+  height: 100vh;
+  width: 100%;
+  background-color: color(White);
+
+  .login {
+    padding-inline: to-rem(97);
+    background-color: color(White);
+
+    @media (max-width: 800px) {
+      padding-inline: to-rem(30);
+      padding-bottom: to-rem(30);
+
+      .login__logo {
+        padding-top: to-rem(50);
+        margin-bottom: to-rem(80);
+      }
+      &__formgroup {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(37);
+      }
+      .login__form {
+        padding-inline: to-rem(0);
+      }
+    }
+
+    &__logo {
+      width: 100%;
+      padding-top: to-rem(80);
+      margin-bottom: to-rem(80);
+    }
+    &__formgroup {
+      display: flex;
+      align-items: center;
+      gap: to-rem(67);
+      width: 100%;
+    }
+    &__form {
+      width: 100%;
+      padding-inline: to-rem(40);
+      h3 {
+        font-family: $global-form-family;
+        font-size: to-rem(40);
+        font-weight: $font-weight-semibold;
+        color: color(PrimaryDark);
+        letter-spacing: -0.04em;
+      }
+      p {
+        font-family: $global-form-family;
+        font-size: to-rem(20);
+        font-weight: $font-weight-light;
+        letter-spacing: -0.04em;
+        padding-bottom: to-rem(40);
+      }
+      .form__group {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(10);
+        margin-bottom: to-rem(20);
+        width: 100%;
+        font-family: $global-form-family;
+        position: relative;
+        input {
+          font-size: to-rem(16);
+          outline: none;
+          border: 2px solid rgba(84, 95, 125, 0.15);
+          font-weight: $font-weight-light;
+          letter-spacing: -0.04em;
+          border-radius: to-rem(5);
+          padding: to-rem(10);
+          padding-right: to-rem(50);
+          color: color(PrimaryDark);
+        }
+        label {
+          position: absolute;
+          right: to-rem(10);
+          top: to-rem(15);
+          text-transform: uppercase;
+          font-size: to-rem(12);
+          font-weight: $font-weight-moreDense;
+          color: color(btnPrimary);
+        }
+      }
+      button {
+        background-color: color(btnPrimary);
+        color: color(White);
+        border-radius: to-rem(8);
+        width: 100%;
+        padding: to-rem(10);
+      }
+
+      .login__fpassword {
+        font-size: to-rem(12);
+        font-weight: $font-weight-moreDense;
+        color: color(btnPrimary);
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}

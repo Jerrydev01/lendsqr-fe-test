@@ -1,0 +1,9 @@
+@import "../../../shared-styles.scss";
+
+.user {
+  &__menu {
+    width: min(100%, to-rem(280));
+  }
+  
+}
+

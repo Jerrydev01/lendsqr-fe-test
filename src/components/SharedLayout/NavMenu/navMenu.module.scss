@@ -1,0 +1,62 @@
+@import "../../../shared-styles.scss";
+
+.navMenu {
+  width: to-rem(280);
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: to-rem(30);
+
+  padding-top: to-rem(100);
+  background-color: color(White);
+  &__links {
+    padding-block: to-rem(10);
+    gap: to-rem(10);
+    color: color(PrimaryDark);
+    font-size: to-rem(16);
+    padding-inline: to-rem(30);
+    &:hover {
+      color: color(PrimaryDark);
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__active {
+    color: color(PrimaryDark);
+    background-color: hsla(180, 60%, 51%, 0.06);
+    border-left: 3px solid color(btnPrimary);
+    font-weight: 600;
+  }
+
+  &__inactive {
+    opacity: 0.9;
+  }
+
+  &__switch {
+    align-items: center;
+    gap: to-rem(10);
+    padding-inline: to-rem(30);
+    padding-block: to-rem(20);
+  }
+
+  ul {
+    padding-left: to-rem(0);
+  }
+  h3 {
+    font-size: to-rem(12);
+    text-transform: uppercase;
+    color: color(PrimaryLight);
+    padding-top: to-rem(25);
+    padding-bottom: to-rem(10);
+    padding-inline: to-rem(30);
+  }
+  &__version {
+    padding-top: to-rem(25);
+    color: color(PrimaryBold);
+  }
+
+  &__logout {
+    border-top: 1px solid hsla(220, 58%, 31%, 0.1);
+    margin-top: to-rem(50);
+    padding-top: to-rem(10);
+  }
+}

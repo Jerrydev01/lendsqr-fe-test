@@ -1,0 +1,115 @@
+@import "./shared-styles.scss";
+
+:root {
+  font-family: $global-font-family;
+  font-size: 100%;
+  font-weight: 400;
+  background-color: #e5e5e5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: $global-font-family;
+  font-size: 100%;
+  color: color(PrimaryLight);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+}
+
+.logoImage {
+  width: to-rem(144.8);
+  object-fit: contain;
+
+  &--small {
+    width: to-rem(100);
+    height: to-rem(100);
+  }
+}
+
+.padding__child {
+  padding-top: to-rem(100);
+}
+
+  .show {
+    display: flex;
+  }
+  .hide {
+    display: none;
+  }

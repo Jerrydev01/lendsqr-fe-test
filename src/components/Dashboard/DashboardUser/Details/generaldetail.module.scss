@@ -1,0 +1,29 @@
+@import "../../../../shared-styles.scss";
+
+.detail {
+  h3 {
+    font-weight: 500;
+    font-size: to-rem(16);
+    color: color(PrimaryBold);
+    padding-block: to-rem(30);
+  }
+  h6 {
+    font-size: to-rem(12);
+    color: color(PrimaryLight);
+    text-transform: uppercase;
+    padding-bottom: to-rem(4);
+    font-weight: 400;
+  }
+  p {
+    font-size: to-rem(16);
+    color: color(PrimaryLight);
+    font-weight: 500;
+  }
+  &__user {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: to-rem(20);
+    border-bottom: 1px solid hsla(220, 58%, 31%, 0.1);
+    padding-bottom: to-rem(20);
+  }
+}

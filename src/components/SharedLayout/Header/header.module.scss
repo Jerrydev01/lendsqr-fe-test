@@ -1,0 +1,63 @@
+@import "../../../shared-styles.scss";
+//  padding-inline: to-rem(30);
+.user {
+  justify-content: space-between;
+  padding-block: to-rem(30);
+  padding-inline: to-rem(30);
+  background-color: color(White);
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: to-rem(80);
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  &__left {
+    gap: to-rem(160);
+    width: 50%;
+  }
+  &__right {
+    gap: to-rem(20);
+    width: 50%;
+    justify-content: flex-end;
+    font-size: to-rem(16);
+    align-items: center;
+    img {
+      border-radius: 50%;
+    }
+    .user__name {
+      align-items: center;
+      gap: to-rem(10);
+      font-weight: 500;
+    }
+  }
+  &__search {
+    font-size: to-rem(14);
+    width: 100%;
+    position: relative;
+    input {
+      background: #ffffff;
+      outline: none;
+      border: 1px solid #21407d5f;
+      border-radius: 8px;
+      padding: to-rem(5) to-rem(20);
+      width: min(100%, to-rem(400));
+      position: relative;
+      color: color(PrimaryDark);
+    }
+    label {
+      color: color(White);
+      font-weight: 500;
+      background-color: color(btnPrimary);
+      position: absolute;
+      padding: to-rem(9.5) to-rem(15);
+      right: to-rem(0);
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}

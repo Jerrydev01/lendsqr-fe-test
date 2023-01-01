@@ -1,0 +1,150 @@
+@import "../../../shared-styles.scss";
+
+.table__table {
+  font-size: to-rem(14);
+  color: color(PrimaryLight);
+  line-height: to-rem(16);
+  background-color: color(White);
+  padding-block: to-rem(30);
+  padding-inline: to-rem(20);
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  position: relative;
+  tr {
+    width: 100%;
+    text-align: left;
+  }
+  thead {
+    th {
+      font-weight: 600;
+      font-size: to-rem(12);
+      color: color(PrimaryLight);
+      line-height: to-rem(16);
+      text-transform: uppercase;
+      padding-bottom: to-rem(20);
+      white-space: nowrap;
+    }
+    button {
+      color: color(PrimaryLight);
+    }
+  }
+  tbody {
+    position: relative;
+    tr {
+      td {
+        padding: to-rem(10) 0;
+        padding-right: to-rem(5);
+        border-bottom: 1px solid rgba(33, 63, 125, 0.06);
+      }
+    }
+  }
+  .icon {
+    font-size: to-rem(20);
+    width: to-rem(40);
+  }
+  .table__filter {
+    position: absolute;
+    top: to-rem(70);
+    transform: translateX(-1rem);
+  }
+}
+
+.user {
+  gap: to-rem(10);
+  transform: translateY(-5rem);
+  flex-direction: column;
+  position: absolute;
+  z-index: 20;
+  background-color: color(White);
+  padding: to-rem(10) to-rem(25);
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: to-rem(4);
+  right: to-rem(20);
+
+  &__groupDetail {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(20);
+    font-size: to-rem(14);
+    color: color(PrimaryLight);
+    line-height: to-rem(16);
+    margin-block: to-rem(10);
+    a {
+      color: color(PrimaryLight);
+      text-decoration: none;
+      &:hover {
+        color: color(PrimaryDark);
+      }
+    }
+    .user__edit {
+      display: flex;
+      gap: to-rem(10);
+      cursor: pointer;
+    }
+  }
+}
+
+.userHidden {
+  display: none;
+}
+
+.table__pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-block: to-rem(23);
+  .table__pageshow {
+    display: flex;
+    gap: to-rem(16);
+    font-size: to-rem(14);
+  }
+
+  select {
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: to-rem(4);
+    padding: to-rem(5) to-rem(10);
+    font-size: to-rem(14);
+    color: color(PrimaryBold);
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  // pagination styles
+  .pagination__btns {
+    display: flex;
+    gap: to-rem(16);
+    font-size: to-rem(16);
+  }
+
+  .pagination__btns__active {
+    color: black;
+    font-weight: 600;
+  }
+
+  .pagination__btns__disabled {
+    color: rgba(33, 63, 125, 0.3);
+    cursor: pointer;
+  }
+
+  .pagination__btns__next {
+    color: color(PrimaryLight);
+    font-weight: 600;
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    padding: to-rem(5) to-rem(10);
+    cursor: pointer;
+  }
+  .pagination__btns__prev {
+    color: color(PrimaryLight);
+    font-weight: 600;
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    padding: to-rem(5) to-rem(10);
+    cursor: pointer;
+  }
+
+  .pagination__btns__disabled:active {
+    color: rgba(33, 63, 125, 0.3);
+  }
+}

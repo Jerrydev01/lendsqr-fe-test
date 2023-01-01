@@ -1,0 +1,130 @@
+@import "../../../shared-styles.scss";
+
+.dashboard {
+  padding-inline: to-rem(60);
+  .singleUser {
+    a {
+      text-decoration: none;
+      color: color(PrimaryLight);
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: to-rem(20);
+      margin-bottom: to-rem(20);
+      margin-top: to-rem(30);
+    }
+
+    &__main_header {
+      font-weight: 500;
+      font-size: to-rem(24);
+      padding-bottom: to-rem(40);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        border-radius: 8px;
+        padding-inline: to-rem(16);
+        padding-block: to-rem(10);
+        &:hover {
+          background-color: color(White);
+          transition: all 0.3s ease-in-out;
+        }
+        &:first-child {
+          margin-right: to-rem(20);
+          color: #e4033b;
+          border: 1px solid #e4033b;
+        }
+        &:last-child {
+          color: color(btnPrimary);
+          border: 1px solid color(btnPrimary);
+        }
+      }
+    }
+    &__user_account {
+      align-items: center;
+      gap: to-rem(20);
+      padding-block: to-rem(30) to-rem(50);
+      padding-inline: to-rem(30);
+      background: color(White);
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: to-rem(4);
+      h1 {
+        font-weight: 500;
+        font-size: to-rem(22);
+        color: color(PrimaryDark);
+      }
+      p {
+        font-weight: 400;
+        font-size: to-rem(14);
+        color: color(PrimaryLight);
+      }
+
+      .bank {
+        font-size: to-rem(12);
+        color: color(PrimaryDark);
+      }
+
+      .user_avatar {
+        display: flex;
+        align-items: center;
+        gap: to-rem(10);
+        border-right: 1px solid rgba(84, 95, 125, 0.529);
+        padding-right: to-rem(20);
+        img {
+          width: to-rem(100);
+          height: to-rem(100);
+
+          border-radius: 50%;
+        }
+      }
+      .user_tier {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-right: 1px solid rgba(84, 95, 125, 0.529);
+        height: to-rem(100);
+        align-self: center;
+        font-weight: 500;
+        padding-right: to-rem(20);
+        div {
+          display: flex;
+          color: #e9b200;
+          gap: to-rem(5);
+          padding-top: to-rem(4);
+          span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      color: #000000;
+      padding-right: to-rem(30);
+      position: relative;
+      transform: translateY(-1.6rem);
+      cursor: pointer;
+      .active {
+        color: color(btnPrimary);
+        border-bottom: 2px solid color(btnPrimary);
+      }
+    }
+  }
+  &__user_info {
+    padding-inline: to-rem(30);
+    margin-bottom: to-rem(40);
+    background-color: color(White);
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+  }
+}
