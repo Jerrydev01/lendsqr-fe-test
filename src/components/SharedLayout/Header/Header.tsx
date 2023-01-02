@@ -1,17 +1,27 @@
 import React from "react";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
-import { AiOutlineBell, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlineBell,
+  AiOutlineSearch,
+  AiOutlineMenu,
+  AiOutlineClose,
+} from "react-icons/ai";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import user from "../../../assets/user.png";
 import style from "./header.module.scss";
 
-const Header = () => {
+const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
   return (
     <section>
       <div className={`flex ${style.user}`}>
         <div className={`flex ${style.user__left}`}>
-          <img src={logo} alt="" className="logoImage" />
+          <div className={`${style.user__bar}`}>
+            <button onClick={handleShowNav} className="">
+              {showNav ? <AiOutlineClose /> : <AiOutlineMenu />}
+            </button>
+            <img src={logo} alt="" className="logoImage" />
+          </div>
           <div className={`flex ${style.user__search}`}>
             <input
               id="search"

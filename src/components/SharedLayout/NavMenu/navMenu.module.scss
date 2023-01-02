@@ -5,6 +5,9 @@
   min-height: 100vh;
   height: 100%;
   padding-bottom: to-rem(30);
+  // @media (max-width: 1024px) {
+  //   display: none;
+  // }
 
   padding-top: to-rem(100);
   background-color: color(White);

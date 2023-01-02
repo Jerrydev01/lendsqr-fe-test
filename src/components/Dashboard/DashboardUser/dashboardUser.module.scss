@@ -2,6 +2,9 @@
 
 .dashboard {
   padding-inline: to-rem(60);
+  @media (max-width: 1026px) {
+    padding-inline: to-rem(30);
+  }
   .singleUser {
     a {
       text-decoration: none;

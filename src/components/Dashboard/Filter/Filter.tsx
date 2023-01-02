@@ -71,6 +71,7 @@ const Filter = ({ data, setData }: any) => {
             className={style.filter__select}
             required
           >
+            <option value="">Select Organization</option>
             {data.map((value: any) => {
               return (
                 <option value={value.id} key={value.id}>

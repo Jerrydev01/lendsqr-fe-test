@@ -25,5 +25,11 @@
     gap: to-rem(20);
     border-bottom: 1px solid hsla(220, 58%, 31%, 0.1);
     padding-bottom: to-rem(20);
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
 }

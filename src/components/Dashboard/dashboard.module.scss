@@ -8,6 +8,12 @@
   line-height: to-rem(28);
   padding-top: to-rem(40);
   min-width: 100%;
+  @media (max-width: 1026px) {
+    padding-inline: to-rem(35);
+  }
+  @media (max-width: 900px) {
+    padding-inline: to-rem(20);
+  }
   &__users {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -16,6 +22,10 @@
 
     @media (max-width: 1026px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: to-rem(0);
     }
   }
   &__users__item {

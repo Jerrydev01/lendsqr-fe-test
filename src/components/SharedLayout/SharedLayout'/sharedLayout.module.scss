@@ -3,7 +3,25 @@
 .user {
   &__menu {
     width: min(100%, to-rem(280));
+    min-height: 100vh;
   }
-  
+  @media (max-width: 1026px) {
+    &__menuHide {
+      display: none;
+    }
+    &__menuShow {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 30;
+      background-color: color(White);
+      min-height: 100vh;
+      height: 100%;
+    }
+  }
 }
-

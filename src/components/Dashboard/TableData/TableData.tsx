@@ -112,7 +112,7 @@ const TableData = () => {
 
         {/* add loading */}
         {isLoading ? (
-          <tr className="flex">Loading...</tr>
+          <tr className={`flex ${style.loader}`}>Loading...</tr>
         ) : (
           data
             .slice(pagesVisited, pagesVisited + usersPerPage)
@@ -126,7 +126,9 @@ const TableData = () => {
                       <td>{user.email}</td>
                       <td>{user.profile.phoneNumber}</td>
                       <td>{user.createdAt}</td>
-                      <td>{"inactive"}</td>
+                      <td>
+                        <span>{"active"}</span>
+                      </td>
                       <td className={style.icon}>
                         <button onClick={() => handleShowUserId(user.id)}>
                           <BsThreeDotsVertical />
@@ -134,6 +136,7 @@ const TableData = () => {
                       </td>
                     </tr>
                   </tbody>
+
                   <div
                     className={`${
                       userId === user.id ? style.user : style.userHidden
@@ -199,10 +202,12 @@ const TableData = () => {
 
           <span className="">out of {data.length}</span>
         </div>
+        {/* math.cell in reactPaginate */}
+
         <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
-          pageCount={data.length / usersPerPage}
+          pageCount={Math.ceil(data.length / usersPerPage)}
           onPageChange={changePage}
           containerClassName={`${style.pagination__btns}`}
           previousLinkClassName={`${style.pagination__btns__prev}`}

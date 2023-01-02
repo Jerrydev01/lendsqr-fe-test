@@ -9,14 +9,14 @@ import img9 from "../../../assets/navmenu/briefcase.svg";
 import { navLink } from "../../../utils/navlink";
 import { BsChevronDown } from "react-icons/bs";
 
-const NavMenu = () => {
+const NavMenu = ({ showNav, handleShowNav, setShowNav }: any) => {
   const location = useLocation();
   const path = location.pathname;
 
   const { userId } = useParams();
 
   return (
-    <section className={style.navMenu}>
+    <section className={`${style.navMenu} `}>
       <div className="">
         <nav className="">
           <ul className="">
