@@ -9,7 +9,7 @@
     padding-inline: to-rem(97);
     background-color: color(White);
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       padding-inline: to-rem(30);
       padding-bottom: to-rem(30);
 
@@ -37,6 +37,12 @@
       align-items: center;
       gap: to-rem(67);
       width: 100%;
+      @media (max-width: 900px) {
+        img {
+          width: 100%;
+        }
+        padding-bottom: to-rem(60);
+      }
     }
     &__form {
       width: 100%;
@@ -82,6 +88,7 @@
           font-size: to-rem(12);
           font-weight: $font-weight-moreDense;
           color: color(btnPrimary);
+          cursor: pointer;
         }
       }
       button {

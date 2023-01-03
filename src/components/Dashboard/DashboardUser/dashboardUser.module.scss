@@ -5,6 +5,9 @@
   @media (max-width: 1026px) {
     padding-inline: to-rem(30);
   }
+  @media (max-width: 900px) {
+    padding-inline: to-rem(20);
+  }
   .singleUser {
     a {
       text-decoration: none;
@@ -119,6 +122,16 @@
       .active {
         color: color(btnPrimary);
         border-bottom: 2px solid color(btnPrimary);
+      }
+      @media (max-width: 900px) {
+        white-space: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+gap: to-rem(30);
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
   }
