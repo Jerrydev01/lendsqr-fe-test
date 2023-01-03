@@ -23,9 +23,10 @@
     @media (max-width: 1026px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-      gap: to-rem(0);
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(10);
+      margin-top: to-rem(30);
     }
   }
   &__users__item {
@@ -51,6 +52,19 @@
       font-size: to-rem(24);
       line-height: to-rem(28);
       color: color(PrimaryBold);
+    }
+  }
+  &__desktop_table {
+    display: block;
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  &__desktop_tableMobile {
+    display: none;
+    @media (max-width: 900px) {
+      display: block;
+      font-size: to-rem(14);
     }
   }
 }
