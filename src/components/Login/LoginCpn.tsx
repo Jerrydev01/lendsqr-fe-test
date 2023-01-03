@@ -5,7 +5,7 @@ import style from "./login.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 // Cpn stands for component
-const LoginCpn = () => {
+const LoginCpn = ({ login }: any) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const [loginInput, setLoginInput] = useState({
@@ -17,6 +17,8 @@ const LoginCpn = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // login
+    login();
     // navigate with router-dom
     navigator("/dashboard", { state: { from: "/login" } });
   };
