@@ -22,17 +22,10 @@ function App() {
     setIsAuthenticated(false);
   };
 
-  // check if user is authenticated
-  // if (localStorage.getItem("isAuthenticated") === "true" && !isAuthenticated) {
-  //   setIsAuthenticated(true);
-  // } else {
-  //   setIsAuthenticated(false);
-  // }
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login login={login} />} />
+        <Route path="/" element={<Login login={login} />} />
         <Route path="/" element={<SharedLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/guarantor" element={<Guarantor />} />
