@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Users from "./pages/users";
@@ -32,6 +32,8 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/dashboard/:userId" element={<DashboardUsers />} />
         </Route>
+        <Route path="*" element={<Navigate to="/"/>}/>
+       
       </Routes>
     </BrowserRouter>
   );
