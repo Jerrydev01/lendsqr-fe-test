@@ -221,6 +221,7 @@ const TableData = () => {
       </section>
       <TableDataMobile
         data={data}
+        setData={setData}
         pageNumber={pageNumber}
         isLoading={isLoading}
         handleShowUserId={handleShowUserId}

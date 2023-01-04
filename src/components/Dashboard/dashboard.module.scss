@@ -4,7 +4,7 @@
   padding-inline: to-rem(60);
   font-size: to-rem(24);
   font-weight: 500;
-  color: color(PrimaryBold);
+  color: color(PrimaryDark);
   line-height: to-rem(28);
   padding-top: to-rem(40);
   min-width: 100%;
@@ -51,7 +51,7 @@
       font-weight: 600;
       font-size: to-rem(24);
       line-height: to-rem(28);
-      color: color(PrimaryBold);
+      color: color(PrimaryDark);
     }
   }
   &__desktop_table {
@@ -60,5 +60,4 @@
       display: none;
     }
   }
-  
 }
