@@ -98,9 +98,9 @@
           border-radius: to-rem(8);
           padding: to-rem(5) to-rem(20);
           color: color(PrimaryDark);
-          width: clamp(to-rem(200), 100% - to-rem(100), to-rem(400));
+          width: to-rem(200);
           @media (min-width: 48rem) and (max-width: 56.25rem) {
-            width: clamp(to-rem(400), 100% - to-rem(100), to-rem(400));
+            width: to-rem(500);
           }
         }
       }
