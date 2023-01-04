@@ -21,6 +21,8 @@ const TableDataMobile = ({
   fetchData,
   show,
   changePage,
+  handleShowUser,
+  showUser,
 }: any) => {
   const [userPageNumber, setUserPageNumber] = useState(4);
   const [isShowSort, setIsShowSort] = useState(false);
@@ -138,7 +140,10 @@ const TableDataMobile = ({
                           className={`flex ${style.table_mobile__body__item__link}`}
                         >
                           <span>active</span>
-                          <span onClick={() => handleShowUserId(user.id)}>
+                          <span onClick={() => {
+                            handleShowUserId(user.id);
+                            handleShowUser();
+                          }}>
                             <BsThreeDotsVertical />
                           </span>
                         </span>
@@ -165,7 +170,7 @@ const TableDataMobile = ({
                           userId === user.id ? style.user : style.userHidden
                         } ${style.mobile_userLink}`}
                       >
-                        {userId === user.id ? (
+                        {userId === user.id && showUser === true ? (
                           <>
                             <div className={style.user__groupDetail}>
                               <Link
@@ -208,8 +213,22 @@ const TableDataMobile = ({
 
           {isShowSort ? (
             <div className={style.table__mobile_sort}>
-              <button onClick={handleAscendSort}>Ascending</button>
-              <button onClick={handleDescendSort}>Descending</button>
+              <button
+                onClick={() => {
+                  handleAscendSort();
+                  setIsShowSort(false);
+                }}
+              >
+                Ascending
+              </button>
+              <button
+                onClick={() => {
+                  handleDescendSort();
+                  setIsShowSort(false);
+                }}
+              >
+                Descending
+              </button>
             </div>
           ) : null}
         </div>

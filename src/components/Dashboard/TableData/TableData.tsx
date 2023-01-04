@@ -18,6 +18,7 @@ const TableData = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [show, setShow] = useState(false);
+  const [showUser, setShowUser] = useState(false);
   const [userPageNumber, setUserPageNumber] = useState(10);
   const [userId, setUserId] = useState(1);
 
@@ -28,6 +29,10 @@ const TableData = () => {
     } else {
       setUserId(1);
     }
+  };
+
+  const handleShowUser = () => {
+    setShowUser(!showUser);
   };
 
   const usersPerPage = userPageNumber;
@@ -132,7 +137,12 @@ const TableData = () => {
                           <span>{"active"}</span>
                         </td>
                         <td className={style.icon}>
-                          <button onClick={() => handleShowUserId(user.id)}>
+                          <button
+                            onClick={() => {
+                              handleShowUserId(user.id);
+                              handleShowUser();
+                            }}
+                          >
                             <BsThreeDotsVertical />
                           </button>
                         </td>
@@ -144,7 +154,7 @@ const TableData = () => {
                         userId === user.id ? style.user : style.userHidden
                       }`}
                     >
-                      {userId === user.id ? (
+                      {userId === user.id && showUser === true ? (
                         <>
                           <div className={style.user__groupDetail}>
                             <Link
@@ -230,6 +240,8 @@ const TableData = () => {
         handleShow={handleShow}
         show={show}
         changePage={changePage}
+        handleShowUser={handleShowUser}
+        showUser={showUser}
       />
     </article>
   );
