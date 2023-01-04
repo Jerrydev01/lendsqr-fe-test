@@ -1,6 +1,12 @@
-## About The Project
+# About The Project
 
-[![Lendsqr][product-screenshot]](https://github.com/Jerrydev01/lendsqr-fe-test/blob/master/src/assets/lendsqr.png)
+<h2 align="center">
+ <a href="https://lendsqr-fe-test-jerrydev01.vercel.app/" target="_blank">https://lendsqr-fe-test-jerrydev01.vercel.app/</a>
+</h2>
+
+<div align="center">
+  <img alt="Logo" src="https://github.com/Jerrydev01/lendsqr-fe-test/blob/master/src/assets/lendsqr.png" width="100%" />
+</div>
 
 # Lendsqr Test
 
