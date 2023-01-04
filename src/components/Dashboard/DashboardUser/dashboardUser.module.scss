@@ -5,7 +5,7 @@
   @media (max-width: 1026px) {
     padding-inline: to-rem(30);
   }
-  @media (max-width: 900px) {
+  @media (max-width: 56.25rem) {
     padding-inline: to-rem(20);
   }
   .singleUser {
@@ -13,6 +13,7 @@
       text-decoration: none;
       color: color(PrimaryLight);
     }
+
     &__header {
       display: flex;
       align-items: center;
@@ -28,14 +29,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 37.5rem) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: to-rem(20);
+        flex-wrap: nowrap;
+        button {
+          padding-inline: to-rem(10);
+          padding-block: to-rem(5);
+          font-size: to-rem(10);
+        }
+      }
       button {
         font-weight: 600;
         font-size: 14px;
         text-align: center;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-
-        border-radius: 8px;
+        border-radius: to-rem(8);
         padding-inline: to-rem(16);
         padding-block: to-rem(10);
         &:hover {
@@ -62,6 +73,7 @@
       border: 1px solid rgba(33, 63, 125, 0.06);
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
       border-radius: to-rem(4);
+
       h1 {
         font-weight: 500;
         font-size: to-rem(22);
@@ -87,7 +99,6 @@
         img {
           width: to-rem(100);
           height: to-rem(100);
-
           border-radius: 50%;
         }
       }
@@ -111,6 +122,26 @@
         }
       }
     }
+    @media (max-width: 43.75rem) {
+      &__user_account {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: to-rem(0);
+      }
+      .user_avatar {
+        border-right: none;
+        padding-right: 0;
+      }
+      .user_tier {
+        border-right: none;
+        padding-right: 0;
+        display: none;
+      }
+      .user_amount {
+        transform: translateX(6.8rem);
+      }
+    }
+
     &__list {
       display: flex;
       justify-content: space-between;
@@ -123,12 +154,12 @@
         color: color(btnPrimary);
         border-bottom: 2px solid color(btnPrimary);
       }
-      @media (max-width: 900px) {
+      @media (max-width: 56.25rem) {
         white-space: nowrap;
         overflow-x: auto;
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
-gap: to-rem(30);
+        gap: to-rem(30);
         &::-webkit-scrollbar {
           display: none;
         }

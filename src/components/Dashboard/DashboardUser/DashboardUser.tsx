@@ -79,7 +79,6 @@ const DashboardUser = () => {
             <button className="">Activate User</button>
           </div>
         </div>
-        {/* why is this code not working? */}
 
         <div className="">
           <article className={`flex ${style.singleUser__user_account}`}>
@@ -107,7 +106,7 @@ const DashboardUser = () => {
                 </span>
               </div>
             </div>
-            <div className="">
+            <div className={style.user_amount}>
               {/* make this code better */}
               <h1 className="">{formatMoney(data?.accountBalance as any)}</h1>
               <p
