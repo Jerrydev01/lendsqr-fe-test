@@ -55,6 +55,7 @@ const Filter = ({ data, setData }: any) => {
       status: "",
     });
 
+    window.location.reload();
     setData(data);
   };
 
