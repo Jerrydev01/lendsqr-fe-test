@@ -15,10 +15,15 @@ import style from "./header.module.scss";
 
 const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
   const [showUser, setShowUser] = useState<boolean>(false);
+  const [showInput, setShowInput] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
 
   const handleShowUser = () => {
     setShowUser(!showUser);
+  };
+
+  const handleShowInput = () => {
+    setShowInput(!showInput);
   };
 
   const scrollIt = () => {
@@ -76,7 +81,7 @@ const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
         {/* mobile user profile */}
         <article className={style.mobileSearch}>
           <div className="flex">
-            <button>
+            <button onClick={handleShowInput}>
               <AiOutlineSearch />
             </button>
             <button onClick={handleShowUser} className="">
@@ -87,7 +92,9 @@ const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
             </button>
             <div className={`${style.mobileSearch__input} `}>
               <input
-                className={`${scrollY > 50 ? "show" : "hide"}`}
+                className={`${
+                  scrollY > 50 || showInput === true ? "show" : "hide"
+                }`}
                 type="text"
                 name=""
                 id=""
