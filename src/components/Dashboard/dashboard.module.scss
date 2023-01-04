@@ -60,11 +60,5 @@
       display: none;
     }
   }
-  &__desktop_tableMobile {
-    display: none;
-    @media (max-width: 900px) {
-      display: block;
-      font-size: to-rem(14);
-    }
-  }
+  
 }

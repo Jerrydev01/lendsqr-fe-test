@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import {
@@ -15,10 +15,26 @@ import style from "./header.module.scss";
 
 const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
   const [showUser, setShowUser] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const handleShowUser = () => {
     setShowUser(!showUser);
   };
+
+  const scrollIt = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", scrollIt);
+    }
+    watchScroll();
+
+    return () => {
+      window.removeEventListener("scroll", scrollIt);
+    };
+  }, [scrollY]);
 
   return (
     <section>
@@ -58,7 +74,7 @@ const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
           </div>
         </article>
         {/* mobile user profile */}
-        <article className={style.user__mobile}>
+        <article className={style.mobileSearch}>
           <div className="flex">
             <button>
               <AiOutlineSearch />
@@ -69,6 +85,15 @@ const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
                 {showUser ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
               </span>
             </button>
+            <div className={`${style.mobileSearch__input} `}>
+              <input
+                className={`${scrollY > 50 ? "show" : "hide"}`}
+                type="text"
+                name=""
+                id=""
+                placeholder="Search for Anything"
+              />
+            </div>
             {showUser ? (
               <div
                 onClick={() => setShowUser(false)}

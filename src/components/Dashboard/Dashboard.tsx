@@ -5,7 +5,6 @@ import img2 from "../../assets/dashboard/icon2.svg";
 import img3 from "../../assets/dashboard/icon3.svg";
 import img4 from "../../assets/dashboard/icon4.svg";
 import TableData from "./TableData/TableData";
-import TableDataMobile from "./TableData/TableDataMobile";
 
 interface totalUsersType {
   id: number;
@@ -66,11 +65,8 @@ const DashboardCpn = () => {
             );
           })}
         </div>
-        <section className={style.dashboard__desktop_table}>
+        <section>
           <TableData />
-        </section>
-        <section className={style.dashboard__desktop_tableMobile}>
-          <TableDataMobile />
         </section>
       </div>
     </section>
