@@ -4,11 +4,9 @@ import { Outlet } from "react-router-dom";
 import NavMenu from "../NavMenu/NavMenu";
 import style from "./sharedLayout.module.scss";
 
-interface Iprops {
-  children: React.ReactNode;
-}
 
-const SharedLayout = ({ children }: Iprops) => {
+
+const SharedLayout = () => {
   const [showNav, setShowNav] = useState(false);
 
   const handleShowNav = () => {
@@ -35,7 +33,7 @@ const SharedLayout = ({ children }: Iprops) => {
           >
             <NavMenu />
           </div>
-          <div className="">{children}</div>
+         
           <Outlet />
         </div>
       </main>
