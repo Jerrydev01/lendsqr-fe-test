@@ -16,11 +16,11 @@ const pageNumberList: number[] = [10, 20, 30, 50, 70, 90, 100];
 const TableData = () => {
   const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const [show, setShow] = useState(false);
-  const [showUser, setShowUser] = useState(false);
-  const [userPageNumber, setUserPageNumber] = useState(10);
-  const [userId, setUserId] = useState(1);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [show, setShow] = useState<boolean>(false);
+  const [showUser, setShowUser] = useState<boolean>(false);
+  const [userPageNumber, setUserPageNumber] = useState<number>(10);
+  const [userId, setUserId] = useState<number>(1);
 
   // check if user id is matches data id
   const handleShowUserId = (userId: number) => {

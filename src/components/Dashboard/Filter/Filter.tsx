@@ -1,8 +1,22 @@
 import React, { useState } from "react";
 import style from "./filter.module.scss";
 
-const Filter = ({ data, setData }: any) => {
-  const [formState, setFormState] = useState({
+interface Iprops {
+  data: any;
+  setData: React.Dispatch<React.SetStateAction<any>>;
+}
+
+interface InputProps {
+  organization: string;
+  user: string;
+  email: string;
+  date: string;
+  phoneNumber: string;
+  status: string;
+}
+
+const Filter = ({ data, setData }: Iprops) => {
+  const [formState, setFormState] = useState<InputProps>({
     organization: "",
     user: "",
     email: "",
@@ -34,12 +48,18 @@ const Filter = ({ data, setData }: any) => {
   };
 
   // handle change in input fields
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
   // handle submit of form
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (
+    e: React.MouseEventHandler<HTMLButtonElement> | any
+  ) => {
     e.preventDefault();
     filterDataFile();
   };

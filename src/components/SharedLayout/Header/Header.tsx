@@ -14,8 +14,8 @@ import user from "../../../assets/user.png";
 import style from "./header.module.scss";
 
 const Header = ({ showNav, handleShowNav, setShowNav }: any) => {
-  const [showUser, setShowUser] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [showUser, setShowUser] = useState<boolean>(false);
+  const [scrollY, setScrollY] = useState<number>(0);
 
   const handleShowUser = () => {
     setShowUser(!showUser);

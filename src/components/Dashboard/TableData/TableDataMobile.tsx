@@ -10,6 +10,21 @@ import img2 from "../../../assets/dashboard/blacklist.svg";
 import img3 from "../../../assets/dashboard/activeuser.svg";
 import Filter from "../Filter/Filter";
 
+interface Iprops {
+  data: any;
+  setData: React.Dispatch<React.SetStateAction<any>>;
+  userId: number;
+  pageNumber: number;
+  isLoading: boolean;
+  handleShowUserId: (userId: number) => void;
+  handleShow: () => void;
+  fetchData: () => void;
+  show: boolean;
+  changePage: ({ selected }: any) => void;
+  handleShowUser: () => void;
+  showUser: boolean;
+}
+
 const TableDataMobile = ({
   data,
   setData,
@@ -23,7 +38,7 @@ const TableDataMobile = ({
   changePage,
   handleShowUser,
   showUser,
-}: any) => {
+}: Iprops) => {
   const [userPageNumber, setUserPageNumber] = useState(4);
   const [isShowSort, setIsShowSort] = useState(false);
 
@@ -46,7 +61,6 @@ const TableDataMobile = ({
   }, []);
 
   // sort data by ascending and descending
-
   const handleAscendSort = () => {
     const sortedData = data.sort((a: any, b: any) => {
       if (a.userName < b.userName) {
@@ -140,10 +154,12 @@ const TableDataMobile = ({
                           className={`flex ${style.table_mobile__body__item__link}`}
                         >
                           <span>active</span>
-                          <span onClick={() => {
-                            handleShowUserId(user.id);
-                            handleShowUser();
-                          }}>
+                          <span
+                            onClick={() => {
+                              handleShowUserId(user.id);
+                              handleShowUser();
+                            }}
+                          >
                             <BsThreeDotsVertical />
                           </span>
                         </span>

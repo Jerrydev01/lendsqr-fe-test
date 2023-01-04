@@ -4,11 +4,20 @@ import logoImage from "../../assets/pablo-sign-in.svg";
 import style from "./login.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 
-// Cpn stands for component
-const LoginCpn = ({ login }: any) => {
-  const [showPassword, setShowPassword] = useState(false);
+interface inputProps {
+  email: string;
+  password: string;
+}
 
-  const [loginInput, setLoginInput] = useState({
+interface Iprops {
+  login: () => void;
+}
+
+// Cpn stands for component
+const LoginCpn = ({ login }: Iprops) => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const [loginInput, setLoginInput] = useState<inputProps>({
     email: "",
     password: "",
   });

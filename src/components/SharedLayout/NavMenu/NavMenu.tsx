@@ -9,7 +9,13 @@ import img9 from "../../../assets/navmenu/briefcase.svg";
 import { navLink } from "../../../utils/navlink";
 import { BsChevronDown } from "react-icons/bs";
 
-const NavMenu = ({ showNav, handleShowNav, setShowNav }: any) => {
+interface Iprops {
+  showNav: boolean;
+  handleShowNav: () => void;
+  setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavMenu = () => {
   const location = useLocation();
   const path = location.pathname;
 
